@@ -12,6 +12,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { CalculadoraPageComponent } from './components/calculadora-page/calculadora-page.component';
+import { NavbarUnloggedComponent } from './components/navbar-unlogged/navbar-unlogged.component';
+import { NavbarLoggedComponent } from './components/navbar-logged/navbar-logged.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { CalculadoraPageComponent } from './components/calculadora-page/calculad
     MainPageComponent,
     AdminPageComponent,
     CalculadoraPageComponent,
+    NavbarUnloggedComponent,
+    NavbarLoggedComponent,
   ],
   imports: [
     BrowserModule,
