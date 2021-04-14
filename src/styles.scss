@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body{
+    min-height: 100vh;
+    height: auto;
+}
+
+@font-face {
+  font-family: Bangers;
+  src: url(assets/fonts/Bangers-Regular.ttf) format("opentype");
+}
