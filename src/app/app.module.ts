@@ -9,20 +9,16 @@ import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { MainPageComponent } from './components/main-page/main-page.component';
-import { AdminPageComponent } from './components/admin-page/admin-page.component';
-import { CalculadoraPageComponent } from './components/calculadora-page/calculadora-page.component';
-import { NavbarUnloggedComponent } from './components/navbar-unlogged/navbar-unlogged.component';
-import { NavbarLoggedComponent } from './components/navbar-logged/navbar-logged.component';
+import { StoreModule } from '@ngrx/store';
+
+import { HomeComponent } from './components/home/home.component';
+import {NavbarUnloggedComponent} from './components/navbar-unlogged/navbar-unlogged.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent,
-    AdminPageComponent,
-    CalculadoraPageComponent,
     NavbarUnloggedComponent,
-    NavbarLoggedComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +27,8 @@ import { NavbarLoggedComponent } from './components/navbar-logged/navbar-logged.
 
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
