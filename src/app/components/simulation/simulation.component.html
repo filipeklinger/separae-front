@@ -1,33 +1,68 @@
 <main class="container">
   <form
     class="form-login"
+    *ngIf="!isSuccessful"
+    name="form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm"
   >
     <h1 class="h3 mb-3 font-weight-normal">Simulando <br> Espaço Físico</h1>
 
     <h1 class="h5 mb-3 font-weight-normal">Dimensões</h1>
+
+    <div class="alert-danger" *ngIf="width.errors && f.submitted">
+      <div *ngIf="width.errors.required">Largura deve ser um número e é obrigatório</div>
+    </div>
     <div class="input-group mb-3">
-      <input type="text"
-             name="width"
+      <input type="number"
              class="form-control"
-             placeholder="Largura" aria-label="Largura" aria-describedby="Largura-addon">
+             placeholder="Largura"
+             aria-label="Largura"
+             aria-describedby="Largura-addon"
+
+             [(ngModel)]="form.width"
+             name="width"
+             id="width"
+             required
+             #width="ngModel"
+
+      >
       <div class="input-group-append">
         <span class="input-group-text" id="Largura-addon">metros</span>
       </div>
+
+    </div>
+
+    <div class="alert-danger" *ngIf="length.errors && f.submitted">
+      <div *ngIf="length.errors.required">Profundidade deve ser um número e é obrigatório</div>
     </div>
     <div class="input-group mb-3">
-      <input type="text"
-             name="height"
+      <input type="number"
              class="form-control"
-             placeholder="Profundidade" aria-label="height" aria-describedby="height-addon">
+             placeholder="Profundidade" aria-label="length" aria-describedby="length-addon"
+
+             [(ngModel)]="form.length"
+             name="length"
+             required
+             #length="ngModel"
+      >
       <div class="input-group-append">
-        <span class="input-group-text" id="height-addon">metros</span>
+        <span class="input-group-text" id="length-addon">metros</span>
       </div>
     </div>
 
     <h1 class="h5 mb-3 font-weight-normal">Restrição</h1>
 
+    <div class="alert-danger" *ngIf="restrictions.errors && f.submitted">
+      <div *ngIf="restrictions.errors.required">Selecione a Restrição na sua cidade</div>
+    </div>
     <div class="input-group mb-3">
-      <select class="custom-select" id="restrictions" aria-label="Selecione a restrição na sua cidade">
+      <select
+        [(ngModel)]="form.currentLevel"
+        name="currentLevel"
+        required
+        #restrictions="ngModel"
+        class="custom-select" id="restrictions" aria-label="Selecione a restrição na sua cidade">
         <option selected disabled>Escolha a restrição ...</option>
         <option value="Low">Baixo</option>
         <option value="Moderate">Moderado</option>
@@ -37,7 +72,25 @@
       </select>
     </div>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit"> CALCULAR ! </button>
+
+    <h1 class="h5 mb-3 font-weight-normal">Atividade</h1>
+
+    <div class="alert-danger" *ngIf="activityId.errors && f.submitted">
+      <div *ngIf="activityId.errors.required">Selecione a Atividade a ser desempenhada</div>
+    </div>
+    <div class="input-group mb-3">
+      <select
+        [(ngModel)]="form.activityId"
+        name="activityId"
+        required
+        #activityId="ngModel"
+        class="custom-select" id="activityId" aria-label="Selecione a restrição na sua cidade">
+        <option selected disabled>Escolha uma atividade ...</option>
+        <option *ngFor="let actId of activityList" value="{{actId['id']}}">{{actId['name']}}</option>
+      </select>
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block"> CALCULAR ! </button>
     <div class="text-center">
       <small class="text-muted">ESSE CÁLCULO NÃO POSSUI VALOR LEGAL</small>
     </div>
