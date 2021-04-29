@@ -1,0 +1,106 @@
+<main class="container">
+  <form
+    class="form-login"
+  >
+    <h1 class="h3 mb-3 font-weight-normal">Adicionando <br> Espaço Físico</h1>
+
+
+    <div class="form-group">
+      <label for="name">Nome da atividade</label>
+      <input
+        id="name"
+        class="form-control"
+        type="text"
+        placeholder="..."
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="distanceVeryHigh">Distância em Muito Alto Risco</label>
+      <input
+        id="distanceVeryHigh"
+        name="distanceVeryHigh"
+        class="form-control"
+        type="number"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="distanceHigh">Distância em Alto Risco</label>
+      <input
+        id="distanceHigh"
+        name="distanceHigh"
+        class="form-control"
+        type="number"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="distanceModerate">Distância em Moderado Risco</label>
+      <input
+        id="distanceModerate"
+        name="distanceModerate"
+        class="form-control"
+        type="number"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="distanceLow">Distância em Baixo Risco</label>
+      <input
+        id="distanceLow"
+        name="distanceLow"
+        class="form-control"
+        type="number"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="notAllowedAt">Proibido em</label>
+      <select id="notAllowedAt" name="notAllowedAt" class="custom-select" aria-label="Selecione em que restrição a atividade está autorizada">
+        <option selected disabled>Escolha a restrição ...</option>
+        <option value="Low">Baixo</option>
+        <option value="Moderate">Moderado</option>
+        <option value="Hight">Alto</option>
+        <option value="VeryHight">Muito Alto</option>
+        <option value="NotSpecified">Indefinido</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="length">Comprimento</label>
+      <input
+        id="length"
+        name="length"
+        class="form-control"
+        type="number"
+      >
+    </div>
+
+
+    <div class="form-group" style="display: none">
+      <input
+        id="userId"
+        name="userId"
+        class="form-control"
+        type="text"
+      >
+    </div>
+
+    <div class="form-group" style="display: none">
+      <input
+        id="activityId"
+        name="activityId"
+        class="form-control"
+        type="text"
+      >
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit"> CADASTRAR ESPAÇO </button>
+
+  </form>
+
+</main>
+
+
+
