@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav" *ngIf="isLoggedIn">
       <li class="nav-item">
         <a class="nav-link" href="/dashboard">Minha Conta <span class="sr-only">(current)</span></a>
       </li>
@@ -19,8 +19,20 @@
       </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/addActivity">Sair</a>
+          <a class="nav-link" href="#" (click)="logout()">Sair</a>
         </li>
+    </ul>
+
+    <ul class="navbar-nav" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/simulation">Calculadora</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contato">Contato</a>
+      </li>
     </ul>
   </div>
 </nav>
