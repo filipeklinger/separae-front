@@ -17,8 +17,6 @@ export class RegisterComponent implements OnInit {
     password: null
   };
 
-  isLoggedIn = false;
-
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';

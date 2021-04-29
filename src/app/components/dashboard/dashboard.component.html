@@ -7,15 +7,46 @@
   <h1 class="h5 mb-3 font-weight-normal">Restrição</h1>
 
   <div class="input-group mb-3">
-    <select class="custom-select" id="restrictions" aria-label="Selecione a restrição na sua cidade">
+    <select
+      [(ngModel)]="restriction"
+      class="custom-select" id="restrictions" aria-label="Selecione a restrição na sua cidade">
         <option selected disabled>Escolha a restrição ...</option>
         <option value="Low">Baixo</option>
         <option value="Moderate">Moderado</option>
-        <option value="Hight">Alto</option>
-        <option value="VeryHight">Muito Alto</option>
+        <option value="High">Alto</option>
+        <option value="VeryHigh">Muito Alto</option>
         <option value="NotSpecified">Indefinido</option>
      </select>
   </div>
+
+  <h1 class="h5 mb-3 font-weight-normal">Meus Espaços</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">-</th>
+      <th scope="col">Sala</th>
+      <th scope="col">Distância</th>
+      <th scope="col">Restrição</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let activity of activityList">
+      <th scope="row"><button>ALTERAR</button></th>
+      <td>{{activity['name']}}</td>
+      <div [ngSwitch]="restriction">
+        <td *ngSwitchCase="'VeryHigh'">{{activity['distanceVeryHigh']}}</td>
+        <td *ngSwitchCase="'Moderate'">{{activity['distanceModerate']}}</td>
+        <td *ngSwitchCase="'High'">{{activity['distanceHigh']}}</td>
+        <td *ngSwitchCase="'Low'">{{activity['distanceLow']}}</td>
+        <td *ngSwitchDefault> - </td>
+      </div>
+      <td *ngIf="restriction == activity['notAllowedAt']">Não Permitido</td>
+      <td *ngIf="restriction != activity['notAllowedAt']">Permitido</td>
+
+    </tr>
+  </table>
+
+
 
   <!--NG FOR LOOP - ACESSO hall list e activity list -->
 
