@@ -15,6 +15,7 @@ import { AddHallComponent } from './components/add-hall/add-hall.component';
 import { SimulationComponent } from './components/simulation/simulation.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddActivityComponent } from './components/add-activity/add-activity.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SimulationComponent,
     RegisterComponent,
     NavbarComponent,
+    AddActivityComponent,
 
   ],
   imports: [
