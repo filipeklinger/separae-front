@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavbarUnloggedComponent } from './navbar-unlogged.component';
+import { SimulationComponent } from './simulation.component';
 
-describe('NavbarUnloggedComponent', () => {
-  let component: NavbarUnloggedComponent;
-  let fixture: ComponentFixture<NavbarUnloggedComponent>;
+describe('SimulationComponent', () => {
+  let component: SimulationComponent;
+  let fixture: ComponentFixture<SimulationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarUnloggedComponent ]
+      declarations: [ SimulationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarUnloggedComponent);
+    fixture = TestBed.createComponent(SimulationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
