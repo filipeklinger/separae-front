@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'addActivity', component: AddActivityComponent},
   {path: 'simulation', component: SimulationComponent},
   {path: 'register', component: RegisterComponent},
-  {path: '', redirectTo: 'main', pathMatch: 'full'}
+  {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({
