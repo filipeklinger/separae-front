@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 // commons
-const activityRoute = 'https://localhost:5001/activity/';
+const activityRoute = environment.API_URL + '/activity/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json-patch+json' })
