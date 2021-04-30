@@ -21,7 +21,7 @@ export class SimulationComponent implements OnInit {
   isSuccessful = false;
   errorMessage = '';
   activityList = [];
-  calculated = {};
+  calculated = { currentDistance: 0, maxCapacity: 0 };
 
   constructor(
     private calculate: CalculationService,
@@ -49,10 +49,9 @@ export class SimulationComponent implements OnInit {
     console.log(this.form);
 
     this.calculate.addHall(this.form).subscribe(
-      data => {
+      response => {
         this.isSuccessful = true;
-        this.calculated = data;
-        console.log(data);
+        this.calculated = response.data;
         },
       err => {
         this.errorMessage = err.error.message;
@@ -60,9 +59,9 @@ export class SimulationComponent implements OnInit {
     );
   }
 
-  redirect(): void{
-    if ( this.isSuccessful ) {
-      this.router.navigate(['login']);
-    }
-  }
+  // redirect(): void{
+  //   if ( this.isSuccessful ) {
+  //     this.router.navigate(['login']);
+  //   }
+  // }
 }
