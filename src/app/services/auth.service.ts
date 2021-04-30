@@ -18,7 +18,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(user: {login: string, password: string} ): Observable<any> {
-    return this.http.post(authRoute + 'credentials/login', user , httpOptions);
+    return this.http.post(authRoute + '/credentials/login', user , httpOptions);
   }
 
   register(user: {
@@ -28,6 +28,6 @@ export class AuthService {
     login: string,
     password: string
   }): Observable<any> {
-    return this.http.post(authRoute + 'user', user, httpOptions);
+    return this.http.post(authRoute + '/user', user, httpOptions);
   }
 }

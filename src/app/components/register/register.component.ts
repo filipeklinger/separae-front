@@ -38,8 +38,12 @@ export class RegisterComponent implements OnInit {
 
         this.redirect();
       },
-      err => {
-        this.errorMessage = err.error.message;
+      badData => {
+        try {
+          this.errorMessage = badData.error.errors;
+        } catch (ex) {
+          this.errorMessage = 'Ops! algo deu errado';
+        }
         this.isSignUpFailed = true;
       }
     );
